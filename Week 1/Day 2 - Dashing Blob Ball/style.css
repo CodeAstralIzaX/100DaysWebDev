@@ -1,0 +1,77 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+.scene{
+  position:relative;
+  width:100vw;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: #8E2DE2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+}
+.cage{
+  position:relative;  
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:200px;
+  height:200px;
+}
+.cage::before{
+  content:"";
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  background:rgba(251,251,251,0.08);
+  animation-name: rotate;
+  animation-duration: 1.5s;
+  animation-iteration-count:infinite;
+  box-shadow: -20px -20px 10px 0px rgba(0, 0, 0, 0.05),5px 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.cage::after{
+  content:"";
+  position:absolute;
+  bottom:10px;
+  width:100%;
+}
+.ball{
+  position:relative;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background: #f12711;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  animation-name: dash;
+  animation-duration: 1.5s;
+  animation-iteration-count:infinite;
+}
+
+@keyframes dash {
+  0%   {left:0px}
+  10%  {left:25px;height:22px;width:17px;border-radius:25px;}
+  15%  {height:20px;width:20px}
+  30%  {border-radius:25px;height:17px;width:60px;}
+  45%  {left:-90px;height:22px;width:17px;border-radius:25px;}  
+  70% {border-radius:50%}
+  80% {height:20px;width:20px}
+  100% {left:0px;}
+}
+
+@keyframes rotate {
+  0%   {left:0px;transform:rotate(0deg)}
+  33%  {left:0px;transform:rotate(0deg)}
+  36%  {left:-60px;transform:rotate(0deg);border-bottom-left-radius: 0%;border-top-left-radius: 0%;}
+  45%  {transform:rotate(-45deg);border-bottom-left-radius: 50%;border-top-left-radius: 20%;}
+  100% {left:0px;transform:rotate(0deg);border-bottom-left-radius: 0%;border-top-left-radius: 0%;}
+}
