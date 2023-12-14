@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>PolarWarp Truchet</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<canvas id="canvas" width="600" height="600"></canvas>
+<!-- VertexShader code here -->
+<script id="vertexShader" type="x-shader/x-vertex">#version 300 es
+precision highp float;
+  in vec4 position;
+  void main() {
+    gl_Position = vec4( position );
+  }
+</script>
+<!-- FragmentShader code here -->
+<script id="fragmentShader" type="x-shader/x-fragment">#version 300 es
+precision highp float;
+out vec4 fragColor;
+
+// basic uniforms
+uniform vec2 u_resolution;
+uniform float u_time;
+
+// code here
+#define R           u_resolution
+#define T           u_time
+#define M           u_mouse
+
+#define PI          3.14159265358
+#define PI2         6.28318530718
+
+mat2 rot(float a){ return mat2(cos(a),sin(a),-sin(a),cos(a));}
+float hash21(vec2 p){ return fract(sin(dot(p, vec2(27.609, 57.583)))*43758.5453); }
+vec3 hue(float t){ return .5+.5*cos(6.5*(t)+vec3(0,1,2)); }
+
+void main()
+{
+    vec2 uv = (2.*gl_FragCoord.xy-R.xy)/max(R.x,R.y);
+    vec2 xv = uv;
+ 
+    // @stb
+    uv.x -= .25;
+    uv /= uv.x*uv.x + uv.y*uv.y;
+    uv.x += 2.;
+
+    uv *= rot(T*.15);
+  
+    uv = vec2(log(length(uv)),atan(uv.y,uv.x))*2.546;//1.273;//.637;//.31825;//other good values
+       
+    uv.x+=T;
+    float tt = T*.08;
+    float px = fwidth(uv.x);
+    
+    vec2 dv = fract(uv)-.5,
+         id = floor(uv);
+
+    float rnd = hash21(id),
+          bnd = fract(rnd*147.32+(T*.05));
+
+    vec3 h = hue(tt-uv.x*.015)*.85,
+         g = hue(tt+bnd*.35-uv.x*.075)*.5;
+         
+    if(rnd<.5) dv.x = -dv.x;
+       rnd = fract(rnd*147.32+tt);
+       
+    vec2  gx = length(dv-.5)<length(dv+.5) ? vec2(dv-.5) : vec2(dv+.5);
+    float cx = (rnd>.75) ? min(length(dv.x),length(dv.y)) : length(gx)-.5;
+
+    h = mix(h,h*.5,smoothstep(.035+px,-px,abs(cx)-.125));
+    h = mix(h,g,smoothstep(px,-px,abs(cx)-.12));
+    h = mix(h,vec3(1),smoothstep(px,-px,abs(abs(cx)-.12)-.01));
+
+    fragColor = vec4(pow(h,vec3(.4545)),1.);
+}
+
+
+</script>
+<!-- partial -->
+  <script src='https://jhancock532.github.io/twgl.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
