@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: radial-gradient(circle at center, #878889, #2f353f);
+  display: grid;
+  grid-template-rows: 1fr -webkit-min-content;
+  grid-template-rows: 1fr min-content;
+  place-items: center;
+}
+
+.ui {
+  padding: 1rem;
+}
+
+button {
+  background: #f2f2f2;
+  border: none;
+  border-radius: 0.2rem;
+  color: #2f353f;
+  padding: 0.5rem;
+}
