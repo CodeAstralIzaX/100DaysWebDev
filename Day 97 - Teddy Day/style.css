@@ -1,0 +1,301 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: "Gloria Hallelujah", cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+*:before, *:after {
+  content: "";
+  position: absolute;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.grizzly .arm-right .paw, .grizzly .arm-left .paw, .grizzly .arm-right, .grizzly .arm-left, .grizzly .ears, .grizzly .snout, .grizzly .mouth, .grizzly .nose, .grizzly .eyes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grizzly {
+  width: 164px;
+  height: 112px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  transform-origin: 50% 100%;
+  animation: jump 2s infinite;
+  z-index: 0;
+}
+.grizzly .wrapper {
+  width: 134px;
+  height: 100%;
+  position: relative;
+}
+.grizzly .body {
+  right: 7%;
+  height: 100%;
+  position: absolute;
+  bottom: -5px;
+  width: 70%;
+  background: #aa704a;
+  border-radius: 44% 44% 0 0;
+  transform: rotate(-7deg);
+}
+.grizzly .body:after {
+  width: 100%;
+  height: 130%;
+  z-index: -1;
+  border-radius: 100% 100% 0 0;
+  background: inherit;
+  right: 0;
+  top: 0;
+  transform: rotate(3deg) translate(6%, 0);
+}
+.grizzly .body:before {
+  width: 50%;
+  height: 62%;
+  bottom: 0;
+  left: -3%;
+  background: inherit;
+  transform: rotate(6deg);
+}
+.grizzly .face {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  z-index: 1;
+  top: 15%;
+  left: 20%;
+}
+.grizzly .eyes {
+  right: 0;
+  margin: auto;
+  width: 80%;
+  z-index: 2;
+}
+.grizzly .eyes:before, .grizzly .eyes:after {
+  width: 4px;
+  height: 5px;
+  background: black;
+  border-radius: 100%;
+  animation: blink 3s infinite;
+}
+.grizzly .eyes:after {
+  right: 0;
+}
+.grizzly .nose {
+  background: black;
+  width: 18px;
+  height: 8px;
+  border-radius: 100% 100% 50% 100%;
+  top: 25%;
+  left: 30%;
+}
+.grizzly .mouth {
+  width: 26px;
+  height: 10px;
+  background: #501b23;
+  border-radius: 100% 100% 50% 50%;
+  top: 55%;
+  right: 9%;
+  left: unset;
+  overflow: hidden;
+  animation: mouth 2s infinite;
+}
+.grizzly .mouth:before {
+  width: 17px;
+  height: 13px;
+  background: #e29aa6;
+  border-radius: 100%;
+  top: 3px;
+  right: -2px;
+}
+.grizzly .snout {
+  width: 50px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 44%;
+  top: 16%;
+  left: 1%;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+.grizzly .snout:before {
+  width: 37%;
+  height: 50%;
+  right: 35%;
+  top: -1px;
+  z-index: 21;
+  border-radius: 36%;
+  border: 1px solid black;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+.grizzly .ears {
+  animation: ears 2s infinite;
+}
+.grizzly .ears:before, .grizzly .ears:after {
+  width: 12px;
+  height: 16px;
+  background: #aa704a;
+  border-radius: 45%;
+}
+.grizzly .ears:before {
+  transform: rotate(-37deg);
+  top: 0;
+  left: 12%;
+}
+.grizzly .ears:after {
+  right: 11%;
+  transform: rotate(25deg);
+}
+.grizzly .arm-right, .grizzly .arm-left {
+  border-radius: 51% 0 0 44%;
+  width: 42px;
+  height: 25px;
+  background: #aa704a;
+  transform: rotate(31deg);
+  top: 46%;
+  left: -27%;
+  transform-origin: 100% 0;
+  animation: arm-right-wave 2s infinite;
+}
+.grizzly .arm-right:after, .grizzly .arm-left:after {
+  width: 134%;
+  height: 111%;
+  top: 18%;
+  left: 1%;
+  transform: rotate(9deg);
+  border-radius: 44% 0 50% 44%;
+  background: inherit;
+}
+.grizzly .arm-right .paw, .grizzly .arm-left .paw {
+  width: 18px;
+  height: 18px;
+  z-index: 2;
+  top: 21%;
+  left: 4%;
+}
+.grizzly .arm-right .paw:before, .grizzly .arm-left .paw:before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e5ae8f;
+  right: 19%;
+  top: 25%;
+}
+.grizzly .arm-right .paw i, .grizzly .arm-left .paw i {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #e5ae8f;
+  left: 30%;
+}
+.grizzly .arm-right .paw i:nth-child(1), .grizzly .arm-left .paw i:nth-child(1) {
+  bottom: 15%;
+}
+.grizzly .arm-right .paw i:nth-child(2), .grizzly .arm-left .paw i:nth-child(2) {
+  bottom: 50%;
+  left: 10%;
+}
+.grizzly .arm-left {
+  transform: rotate(-14deg) scaleX(-1);
+  left: unset;
+  right: 8%;
+  animation: arm-left-wave 2s infinite;
+}
+
+.their-box {
+  width: 245px;
+  height: 149px;
+  background: #b6956c;
+  position: relative;
+  z-index: 1;
+  perspective: 1000px;
+}
+.their-box:before {
+  content: "HAPPY TEDDY DAY";
+  font-size: 14.1px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.their-box .flap {
+  position: absolute;
+  background: #bea17d;
+  width: 100%;
+  height: 46px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0) rotateX(63deg) scaleY(2);
+  transform-origin: 50% 0;
+  border-bottom: 1px solid #debd93;
+}
+
+@keyframes arm-right-wave {
+  0%, 10%, 30%, 60%, 100% {
+    transform: rotate(33deg);
+  }
+  20%, 40% {
+    transform: rotate(54deg);
+  }
+}
+@keyframes arm-left-wave {
+  0%, 10%, 30%, 60%, 100% {
+    transform: rotate(-14deg) scaleX(-1);
+  }
+  20%, 40% {
+    transform: rotate(-38deg) scaleX(-1);
+  }
+}
+@keyframes jump {
+  0%, 60%, 100% {
+    transform: scale(1.01, 0.98) translate(0, 5%);
+  }
+  20%, 40% {
+    transform: scale(0.98, 1.01) translate(0, 0%);
+  }
+}
+@keyframes blink {
+  0%, 90%, 100% {
+    width: 4px;
+    height: 5px;
+  }
+  95% {
+    width: 8px;
+    height: 1px;
+  }
+}
+@keyframes ears {
+  0%, 50%, 100% {
+    transform: scale(1.01, 0.98);
+  }
+  25%, 45% {
+    transform: scale(0.98, 1.01);
+  }
+}
+@keyframes mouth {
+  0%, 60%, 100% {
+    width: 5px;
+    height: 1px;
+  }
+  20%, 40% {
+    width: 26px;
+    height: 10px;
+  }
+}
