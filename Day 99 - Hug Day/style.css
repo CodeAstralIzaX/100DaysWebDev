@@ -1,0 +1,78 @@
+body{
+  display: flex;
+  justify-content: center;
+  background-image: url(./4871703.jpg);
+  margin-top: 100px;
+}
+
+h1{
+  display: flex;
+  justify-content: space-around;
+}
+
+#Down-leg {
+  animation: leg 2s infinite ease-in-out
+}
+
+#Top-hearts {
+  animation: topHeart 2s infinite ease-in-out alternate
+}
+
+#Right-hearts {
+  animation: rightHeart 2s infinite ease-in-out alternate
+}
+
+#Down-left-hearts {
+  animation: downHeart 2s infinite ease-in-out alternate
+}
+
+#Up-leg {
+  animation: foot 2s infinite ease-in-out
+}
+
+
+@keyframes leg {
+  from {
+    transform: translateX(0px)
+  }
+  to {
+    transform: translateX(-4px) translateY(6px) 
+  }
+}
+
+@keyframes foot {
+  from {
+    transform: translateX(0px)
+  }
+  to {
+    transform: translateX(2px) translateY(-3px) 
+  }
+}
+
+
+@keyframes topHeart {
+  from {
+    transform: translateX(0px)
+  }
+  to {
+    transform: translateX(7px) translateY(8px) 
+  }
+}
+
+@keyframes rightHeart {
+  from {
+    transform: translateX(0px)
+  }
+  to {
+    transform: translateX(7px) translateY(8px) 
+  }
+}
+
+@keyframes downHeart {
+  from {
+    transform: translateX(0px)
+  }
+  to {
+    transform: translateX(7px) translateY(8px) 
+  }
+}
