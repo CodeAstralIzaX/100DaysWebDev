@@ -41,38 +41,32 @@ To get started with the challenge, follow these steps:
 ## Project Structure
 
 ```
-100dayswebdev/
-├── week01/
-│   ├── day01/
-│   │   ├── index.html       # Day 1 HTML
-│   │   ├── style.css        # Day 1 CSS
-│   │   └── script.js        # Day 1 JavaScript
-│   ├── day02/
-│   │   ├── index.html       # Day 2 HTML
-│   │   ├── style.css        # Day 2 CSS
-│   │   └── script.js        # Day 2 JavaScript
-│   └── ...
-├── week02/
-│   ├── day08/
-│   │   ├── index.html       # Day 8 HTML
-│   │   ├── style.css        # Day 8 CSS
-│   │   └── script.js        # Day 8 JavaScript
-│   ├── day09/
-│   │   ├── index.html       # Day 9 HTML
-│   │   ├── style.css        # Day 9 CSS
-│   │   └── script.js        # Day 9 JavaScript
-│   └── ...
+100DaysWebDev/
+├── day01/
+│   ├── index.html       # Day 1 HTML
+│   ├── style.css        # Day 1 CSS
+│   └── script.js        # Day 1 JavaScript
+├── day02/
+│   ├── index.html       # Day 2 HTML
+│   ├── style.css        # Day 2 CSS
+│   └── script.js        # Day 2 JavaScript
 ├── ...
-├── week14/
-│   ├── day99/
-│   │   ├── index.html       # Day 99 HTML
-│   │   ├── style.css        # Day 99 CSS
-│   │   └── script.js        # Day 99 JavaScript
-│   ├── day100/
-│   │   ├── index.html       # Day 100 HTML
-│   │   ├── style.css        # Day 100 CSS
-│   │   └── script.js        # Day 100 JavaScript
-│   └── ...
+├── day98/
+│   ├── index.html       # Day 98 HTML
+│   ├── style.css        # Day 98 CSS
+│   └── script.js        # Day 98 JavaScript
+├── day99/
+│   ├── index.html       # Day 99 HTML
+│   ├── style.css        # Day 99 CSS
+│   └── script.js        # Day 99 JavaScript
+├── day100/
+│   ├── index.html       # Day 100 HTML
+│   ├── style.css        # Day 100 CSS
+│   └── script.js        # Day 100 JavaScript
+│
+├── index.html                # INDEX File for Parent Folder
+├── style.css                 # CSS File for Parent Folder
+├── script.js                 # JS File for Parent Folder
 ├── README.md                 # Project README file
 └── LICENSE                   # License file
 ```
