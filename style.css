@@ -1,42 +1,233 @@
+/* Body styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background: radial-gradient(circle at 50%, #1e1f29, #2a2e38);
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Hide horizontal overflow */
+    position: relative;
+}
+
+/* Animated background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+    z-index: -1;
+    animation: backgroundAnimation 20s infinite alternate;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+    border-bottom: 4px solid #00BFFF;
+    border-radius: 0 0 30px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+    opacity: 0.5;
+    animation: pulse 3s infinite;
 }
 
 h1 {
-    text-align: center;
-    margin-top: 20px;
+    font-size: 4rem;
+    color: #00BFFF;
+    margin: 0;
+    text-shadow: 0 6px 15px rgba(0, 191, 255, 0.8);
+    animation: glow 1.5s ease-in-out infinite alternate;
 }
 
+/* Paragraph styles */
 p {
-    text-align: center;
+    font-size: 1.3rem;
+    color: #ddd;
+    margin: 10px 0;
+    font-style: italic;
+    line-height: 1.8;
 }
 
+/* Main content styles */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    overflow-y: auto; /* Allow vertical scrolling */
+    max-height: calc(100vh - 120px); /* Adjust for header and margin */
+    position: relative;
+}
+
+/* List styles */
 ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
-    max-width: 600px;
-    margin: 20px auto;
+    max-width: 1000px;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
+/* List item styles */
 li {
-    background: #fff;
-    margin: 10px;
-    padding: 15px;
+    background: rgba(255, 255, 255, 0.1); /* Near transparent background */
+    padding: 20px;
     text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    backdrop-filter: blur(20px); /* Strong glass effect */
+    flex: 1 1 calc(25% - 30px); /* Four columns layout */
+    min-width: 250px; /* Adjust for better responsiveness */
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
 }
 
+li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+    opacity: 0.2;
+    transition: opacity 0.4s ease;
+}
+
+li:hover::before {
+    opacity: 0.3;
+}
+
+li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.2); /* Enhanced glass effect on hover */
+    animation: liPulse 1s infinite;
+}
+
+/* Link styles */
 a {
     text-decoration: none;
-    color: #007BFF;
+    color: #00BFFF;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    position: relative;
+    font-size: 1.1rem;
+    padding: 5px 0;
+}
+
+a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #00BFFF;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #1E90FF;
+    transform: translateY(-3px);
+}
+
+/* Add this to your CSS file */
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure particles are behind other content */
+}
+
+/* Animations */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 8px rgba(0, 191, 255, 0.9);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(0, 191, 255, 1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes liPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    li {
+        flex: 1 1 calc(50% - 20px); /* Two columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    li {
+        flex: 1 1 100%; /* Single column on very small screens */
+    }
 }

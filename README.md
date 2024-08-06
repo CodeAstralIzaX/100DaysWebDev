@@ -67,6 +67,8 @@ To get started with the challenge, follow these steps:
 ├── index.html                # INDEX File for Parent Folder
 ├── style.css                 # CSS File for Parent Folder
 ├── script.js                 # JS File for Parent Folder
+├── img                       # Image Folder
+│   ├── 100DAYS.png           # Fav Icon
 ├── README.md                 # Project README file
 └── LICENSE                   # License file
 ```
