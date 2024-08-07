@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Day 63 & 64 - 034 Shape Grid",
         "Day 65 & 66 - 3D Office (Three.js)",
         "Day 67 & 68 - 3D Room (Three.js)",
-        "Day 69 , 70 & 71 - Diorama (Three.js)",
+        "Day 69, 70 & 71 - Diorama (Three.js)",
         "Day 72 & 73 Dystopia",
         "Day 74 & 75 Fishbowl Save-the-fish",
         "Day 76 & 77 - Little-restaurant threejs",
